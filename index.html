@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Zenova - Professional digital marketing agency in Toronto. Expert social media marketing, SEO, PPC, web development, and AI solutions for businesses of all sizes.">
+    <meta name="keywords" content="digital marketing, SEO, social media marketing, PPC, web development, Toronto, AI receptionist, CRM, mobile app development">
+    <meta name="author" content="Zenova">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Zenova - Digital Marketing Agency Toronto">
+    <meta property="og:description" content="Your Business deserves better marketing than your cousin running the Instagram page">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/assets/images/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zenova - Digital Marketing Agency">
+    <meta name="twitter:description" content="Your Business deserves better marketing than your cousin running the Instagram page">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Zenova",
+      "description": "Digital Marketing Agency",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressCountry": "CA"
+      },
+      "email": "Hassanumer806@gmail.com",
+      "url": "https://yourwebsite.com",
+      "priceRange": "$$"
+    }
+    </script>
+    
+    <title>Zenova | Digital Marketing Agency Toronto | Your Business Deserves Better</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-circle"></div>
+                <div class="loader-text">ZENOVA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="logo-text">ZENOVA</span>
+                    <span class="logo-dot">.</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="btn-nav">Get Started</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Background -->
+    <section class="hero" id="hero">
+        <!-- 3D Canvas Background -->
+        <canvas id="hero-canvas"></canvas>
+        
+        <!-- Hero Content -->
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Your Business Deserves</span>
+                        <span class="title-line highlight">Better Marketing</span>
+                        <span class="title-line">Than Your Cousin Running</span>
+                        <span class="title-line">The Instagram Page</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        We're Zenova. We turn scroll-stoppers into sale-makers. 
+                        Let's grow your business with strategies that actually work.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary">
+                            Get Free Consultation
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="services.html" class="btn btn-secondary">
+                            View Services
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Stats Counter -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">Success Rate %</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="services-preview" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Services That Actually Get Results</h2>
+                <p class="section-subtitle">
+                    No fluff. No BS. Just strategies that make your phone ring and your revenue grow.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 class="service-title">Social Media Marketing</h3>
+                    <p class="service-description">
+                        Transform your social presence from "meh" to money-making machine.
+                    </p>
+                    <a href="services.html#social-media" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="service-title">SEO (All Types)</h3>
+                    <p class="service-description">
+                        Get found on Google. Dominate your competition. Watch leads pour in.
+                    </p>
+                    <a href="services.html#seo" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="service-title">PPC Advertising</h3>
+                    <p class="service-description">
+                        Every dollar you spend brings back three. That's our promise.
+                    </p>
+                    <a href="services.html#ppc" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="service-title">Content Marketing</h3>
+                    <p class="service-description">
+                        Content that converts. Words that sell. Stories that stick.
+                    </p>
+                    <a href="services.html#content" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Websites that wow visitors and convert them into customers.
+                    </p>
+                    <a href="services.html#web-dev" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Branding</h3>
+                    <p class="service-description">
+                        Stand out, be remembered, and become the obvious choice.
+                    </p>
+                    <a href="services.html#branding" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 7 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">AI Receptionist</h3>
+                    <p class="service-description">
+                        Never miss a call. AI answers 24/7 while you sleep.
+                    </p>
+                    <a href="services.html#ai-receptionist" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 8 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-description">
+                        Put your business in your customers' pockets.
+                    </p>
+                    <a href="services.html#mobile-app" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service Card 9 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">CRM Software</h3>
+                    <p class="service-description">
+                        Manage customers like a pro. Close more deals, faster.
+                    </p>
+                    <a href="services.html#crm" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <span class="section-label">Why Zenova?</span>
+                    <h2>We're Not Your Average Marketing Agency</h2>
+                    <p>
+                        While others promise the moon, we deliver measurable results. 
+                        Our strategies are built on data, executed with precision, and 
+                        optimized for maximum ROI.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Data-Driven Strategies</h4>
+                                <p>Every decision backed by real numbers, not gut feelings</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Transparent Reporting</h4>
+                                <p>You'll know exactly where every dollar goes and what it returns</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Dedicated Team</h4>
+                                <p>Your success is our obsession. We don't rest until you win</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="btn btn-primary">Learn Our Story</a>
+                </div>
+                
+                <div class="why-us-visual">
+                    <!-- Placeholder for image or animation -->
+                    <div class="visual-placeholder">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Fire Your Cousin?</h2>
+                <p>Let's talk about what real marketing can do for your business.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    Get Your Free Strategy Session
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <h3 class="footer-logo">ZENOVA<span>.</span></h3>
+                    <p class="footer-desc">
+                        Digital marketing that actually works. 
+                        Based in Toronto, serving businesses worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#social-media">Social Media Marketing</a></li>
+                        <li><a href="services.html#seo">SEO Services</a></li>
+                        <li><a href="services.html#ppc">PPC Advertising</a></li>
+                        <li><a href="services.html#web-dev">Web Development</a></li>
+                        <li><a href="services.html#ai-receptionist">AI Receptionist</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:Hassanumer806@gmail.com">Hassanumer806@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Toronto, Canada</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zenova. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="js/three-background.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

@@ -13,17 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         
-        question.addEventListener('click', function() {
-            // Close all other FAQs
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
+        if (question) {
+            question.addEventListener('click', function() {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                item.classList.toggle('active');
             });
-            
-            // Toggle current FAQ
-            item.classList.toggle('active');
-        });
+        }
     });
     
     // ========================================
@@ -38,19 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get submit button
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
             
-            // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Get form data
             const formData = new FormData(contactForm);
             
             try {
-                // Submit to Formspree
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
@@ -59,58 +55,62 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // Reset button
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
                 
                 if (response.ok) {
-                    // SUCCESS!
                     contactForm.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Reset form (in case they want to send another)
+                    if (successMessage) {
+                        successMessage.style.display = 'block';
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
                     contactForm.reset();
-                    
                 } else {
-                    // Error response from Formspree
                     throw new Error('Server responded with error');
                 }
                 
             } catch (error) {
-                // Network error or other issue
                 console.error('Form submission error:', error);
-                
-                // Reset button
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
-                
-                // Show error message
                 contactForm.style.display = 'none';
-                errorMessage.style.display = 'block';
+                if (errorMessage) {
+                    errorMessage.style.display = 'block';
+                }
             }
         });
     }
     
     // ========================================
-    // FORM VALIDATION (Real-time)
+    // COPY EMAIL TO _REPLYTO FIELD
     // ========================================
     
-    const inputs = contactForm?.querySelectorAll('input, select, textarea');
+    const emailInput = document.getElementById('email');
+    const replyToInput = document.getElementById('email-replyto');
     
-    inputs?.forEach(input => {
-        input.addEventListener('blur', function() {
-            validateField(this);
+    if (emailInput && replyToInput) {
+        emailInput.addEventListener('input', function() {
+            replyToInput.value = this.value;
         });
         
-        input.addEventListener('input', function() {
-            if (this.value) {
-                validateField(this);
-            }
+        emailInput.addEventListener('blur', function() {
+            replyToInput.value = this.value;
         });
-    });
+    }
+    
+    // ========================================
+    // FORM VALIDATION
+    // ========================================
+    
+    if (contactForm) {
+        const inputs = contactForm.querySelectorAll('input, select, textarea');
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+        });
+    }
     
     function validateField(field) {
         if (field.hasAttribute('required') && !field.value.trim()) {

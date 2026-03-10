@@ -1,69 +1,8 @@
 /* ========================================
-   Contact Form Handling & FAQ Accordion
+   Contact Form & FAQ Handling
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ========================================
-    // CONTACT FORM SUBMISSION
-    // ========================================
-    
-    const contactForm = document.getElementById('contact-form');
-    const successMessage = document.getElementById('form-success');
-    const errorMessage = document.getElementById('form-error');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                // Submit to Formspree
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    // Success!
-                    contactForm.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    
-                    // Reset form
-                    contactForm.reset();
-                    
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                } else {
-                    // Error from server
-                    throw new Error('Form submission failed');
-                }
-                
-            } catch (error) {
-                // Show error message
-                contactForm.style.display = 'none';
-                errorMessage.style.display = 'block';
-                
-                console.error('Form submission error:', error);
-            } finally {
-                // Reset button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
     
     // ========================================
     // FAQ ACCORDION
@@ -88,6 +27,74 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ========================================
+    // CONTACT FORM SUBMISSION
+    // ========================================
+    
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+    const errorMessage = document.getElementById('form-error');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get submit button
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                if (response.ok) {
+                    // SUCCESS!
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Reset form (in case they want to send another)
+                    contactForm.reset();
+                    
+                } else {
+                    // Error response from Formspree
+                    throw new Error('Server responded with error');
+                }
+                
+            } catch (error) {
+                // Network error or other issue
+                console.error('Form submission error:', error);
+                
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Show error message
+                contactForm.style.display = 'none';
+                errorMessage.style.display = 'block';
+            }
+        });
+    }
+    
+    // ========================================
     // FORM VALIDATION (Real-time)
     // ========================================
     
@@ -96,6 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs?.forEach(input => {
         input.addEventListener('blur', function() {
             validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.value) {
+                validateField(this);
+            }
         });
     });
     

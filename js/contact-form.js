@@ -1,5 +1,5 @@
 /* ========================================
-   Contact Form & FAQ Handling
+   Contact Form & FAQ Handling - FIXED
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ========================================
-    // CONTACT FORM SUBMISSION
+    // CONTACT FORM SUBMISSION - FIXED
     // ========================================
     
     const contactForm = document.getElementById('contact-form');
@@ -41,12 +41,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
             
+            // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
+            // Create FormData from the ACTUAL form
             const formData = new FormData(contactForm);
             
+            // Debug: Log what we're sending
+            console.log('Form data being sent:');
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+            
             try {
+                // Submit to Formspree
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
@@ -55,24 +64,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
+                // Check response
+                const data = await response.json();
+                
+                console.log('Formspree response:', data);
                 
                 if (response.ok) {
+                    // SUCCESS!
                     contactForm.style.display = 'none';
                     if (successMessage) {
                         successMessage.style.display = 'block';
                         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
+                    
+                    // Reset button (in case they want to send another)
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                    
+                    // Reset form
                     contactForm.reset();
+                    
                 } else {
-                    throw new Error('Server responded with error');
+                    // Error from Formspree
+                    throw new Error('Formspree returned an error: ' + (data.error || 'Unknown error'));
                 }
                 
             } catch (error) {
+                // Network error or submission failed
                 console.error('Form submission error:', error);
+                
+                // Reset button
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
+                
+                // Show error message
                 contactForm.style.display = 'none';
                 if (errorMessage) {
                     errorMessage.style.display = 'block';
@@ -82,28 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========================================
-    // COPY EMAIL TO _REPLYTO FIELD
-    // ========================================
-    
-    const emailInput = document.getElementById('email');
-    const replyToInput = document.getElementById('email-replyto');
-    
-    if (emailInput && replyToInput) {
-        emailInput.addEventListener('input', function() {
-            replyToInput.value = this.value;
-        });
-        
-        emailInput.addEventListener('blur', function() {
-            replyToInput.value = this.value;
-        });
-    }
-    
-    // ========================================
     // FORM VALIDATION
     // ========================================
     
     if (contactForm) {
-        const inputs = contactForm.querySelectorAll('input, select, textarea');
+        const inputs = contactForm.querySelectorAll('input:not([type="hidden"]), select, textarea');
         
         inputs.forEach(input => {
             input.addEventListener('blur', function() {

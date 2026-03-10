@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                     
-                    // Reset button (in case they want to send another)
+                    // Reset button
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.disabled = false;
                     
@@ -85,12 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     contactForm.reset();
                     
                 } else {
-                    // Error from Formspree
-                    throw new Error('Formspree returned an error: ' + (data.error || 'Unknown error'));
+                    throw new Error('Formspree returned an error');
                 }
                 
             } catch (error) {
-                // Network error or submission failed
                 console.error('Form submission error:', error);
                 
                 // Reset button

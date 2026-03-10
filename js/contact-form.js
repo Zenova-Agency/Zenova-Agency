@@ -1,8 +1,28 @@
 /* ========================================
-   Contact Form & FAQ Handling - FIXED
+   Contact Form - Simple Version
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // ========================================
+    // SHOW SUCCESS MESSAGE IF REDIRECTED
+    // ========================================
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get('success');
+    
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+    
+    if (success === 'true' && successMessage && contactForm) {
+        // Hide form and show success message
+        contactForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Clean URL (remove ?success=true)
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
     
     // ========================================
     // FAQ ACCORDION
@@ -25,84 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
-    // ========================================
-    // CONTACT FORM SUBMISSION - FIXED
-    // ========================================
-    
-    const contactForm = document.getElementById('contact-form');
-    const successMessage = document.getElementById('form-success');
-    const errorMessage = document.getElementById('form-error');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            // Create FormData from the ACTUAL form
-            const formData = new FormData(contactForm);
-            
-            // Debug: Log what we're sending
-            console.log('Form data being sent:');
-            for (let pair of formData.entries()) {
-                console.log(pair[0] + ': ' + pair[1]);
-            }
-            
-            try {
-                // Submit to Formspree
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                // Check response
-                const data = await response.json();
-                
-                console.log('Formspree response:', data);
-                
-                if (response.ok) {
-                    // SUCCESS!
-                    contactForm.style.display = 'none';
-                    if (successMessage) {
-                        successMessage.style.display = 'block';
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                    
-                    // Reset button
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.disabled = false;
-                    
-                    // Reset form
-                    contactForm.reset();
-                    
-                } else {
-                    throw new Error('Formspree returned an error');
-                }
-                
-            } catch (error) {
-                console.error('Form submission error:', error);
-                
-                // Reset button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                
-                // Show error message
-                contactForm.style.display = 'none';
-                if (errorMessage) {
-                    errorMessage.style.display = 'block';
-                }
-            }
-        });
-    }
     
     // ========================================
     // FORM VALIDATION

@@ -6,16 +6,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ========================================
-    // LOADING SCREEN
-    // ========================================
-    
-    window.addEventListener('load', function() {
-        const loadingScreen = document.getElementById('loading-screen');
+  // LOADING SCREEN
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {  // ← Added this check
         setTimeout(() => {
             loadingScreen.classList.add('hidden');
-        }, 1500); // Hide after 1.5 seconds
-    });
-
+        }, 1500);
+    }
+});
     // ========================================
     // NAVIGATION - Scroll Effect
     // ========================================
@@ -231,4 +230,5 @@ function handleContactForm() {
 }
 
 // Call on page load
+
 document.addEventListener('DOMContentLoaded', handleContactForm);

@@ -1,102 +1,486 @@
-<form id="contact-form" class="contact-form" action="https://formspree.io/f/xbdzdedk" method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Formspree Configuration -->
-    <input type="hidden" name="_subject" value="New Contact - Zenova Website">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contact Zenova - Toronto's digital marketing agency. Get your free consultation today. Email, phone, or fill out our contact form.">
+    <meta name="keywords" content="contact Zenova, digital marketing consultation, Toronto marketing agency contact, get a quote">
+    <meta name="author" content="Zenova">
+    <meta name="robots" content="index, follow">
     
-    <div class="form-row">
-        <div class="form-group">
-            <label for="name">Your Name *</label>
-            <input 
-                type="text" 
-                id="name" 
-                name="Name" 
-                placeholder="John Smith"
-                required
-            >
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Contact Us - Zenova Digital Marketing Agency">
+    <meta property="og:description" content="Ready to grow your business? Get in touch with Zenova today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/contact.html">
+    
+    <title>Contact Us | Zenova - Let's Grow Your Business</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="logo-text">ZENOVA</span>
+                    <span class="logo-dot">.</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="btn-nav active">Get Started</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
-        
-        <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input 
-                type="email" 
-                id="email" 
-                name="Email" 
-                placeholder="john@example.com"
-                required
-            >
-            <input type="hidden" name="_replyto" id="email-replyto">
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="page-label">Get In Touch</span>
+                <h1 class="page-title">Ready to Grow Your Business?</h1>
+                <p class="page-subtitle">
+                    Book a free 30-minute strategy session. No sales pitch. 
+                    Just honest advice on what will actually work for your business.
+                </p>
+            </div>
         </div>
-    </div>
-    
-    <div class="form-row">
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input 
-                type="tel" 
-                id="phone" 
-                name="Phone" 
-                placeholder="+1 (555) 123-4567"
-            >
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p class="form-intro">Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/xbdzdedk" method="POST">
+                        
+                        <!-- Formspree Configuration -->
+                        <input type="hidden" name="_subject" value="New Contact - Zenova Website">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="Name" 
+                                    placeholder="John Smith"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="Email" 
+                                    placeholder="john@example.com"
+                                    required
+                                >
+                                <input type="hidden" name="_replyto" id="email-replyto">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="Phone" 
+                                    placeholder="+1 (555) 123-4567"
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Interested In *</label>
+                                <select id="service" name="Service Interested In" required>
+                                    <option value="">Select a service</option>
+                                    <option value="Social Media Marketing">Social Media Marketing</option>
+                                    <option value="SEO Services">SEO Services</option>
+                                    <option value="PPC Advertising">PPC Advertising</option>
+                                    <option value="Content Marketing">Content Marketing</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Branding">Branding</option>
+                                    <option value="AI Receptionist">AI Receptionist</option>
+                                    <option value="Mobile App Development">Mobile App Development</option>
+                                    <option value="CRM Software">CRM Software</option>
+                                    <option value="Not Sure / Multiple Services">Not Sure / Multiple Services</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input 
+                                type="text" 
+                                id="company" 
+                                name="Company" 
+                                placeholder="Your Company Ltd."
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Project *</label>
+                            <textarea 
+                                id="message" 
+                                name="Message" 
+                                rows="6" 
+                                placeholder="What are your goals? What challenges are you facing? The more details, the better we can help!"
+                                required
+                            ></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Monthly Marketing Budget</label>
+                            <select id="budget" name="Budget">
+                                <option value="">Select your budget range</option>
+                                <option value="Under $1,000/month">Under $1,000/month</option>
+                                <option value="$1,000 - $3,000/month">$1,000 - $3,000/month</option>
+                                <option value="$3,000 - $5,000/month">$3,000 - $5,000/month</option>
+                                <option value="$5,000 - $10,000/month">$5,000 - $10,000/month</option>
+                                <option value="$10,000+/month">$10,000+/month</option>
+                                <option value="Not sure yet">Not sure yet</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <p class="form-note">
+                            * Required fields. We respect your privacy and will never share your information.
+                        </p>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="form-success" class="form-message success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thanks for reaching out! We'll get back to you within 24 hours.</p>
+                    </div>
+                    
+                    <!-- Error Message (Hidden by default) -->
+                    <div id="form-error" class="form-message error-message" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Oops! Something went wrong.</h3>
+                        <p>Please try again or email us directly at hassanumer806@gmail.com</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Sidebar -->
+                <div class="contact-info-sidebar">
+                    
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        <p>Prefer to reach out directly? Here's how:</p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email Us</h4>
+                                <a href="mailto:hassanumer806@gmail.com">hassanumer806@gmail.com</a>
+                                <span class="info-note">We reply within 24 hours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Call Us</h4>
+                                <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                                <span class="info-note">Mon-Fri, 9am-6pm EST</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Visit Us</h4>
+                                <p>Toronto, Ontario<br>Canada</p>
+                                <span class="info-note">Remote-first, serving worldwide</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3>Follow Us</h3>
+                        <div class="social-links-large">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card business-hours">
+                        <h3>Business Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Saturday</span>
+                                <span class="time">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </div>
+                        </div>
+                        <p class="hours-note">
+                            <i class="fas fa-info-circle"></i>
+                            Emergency support available 24/7 for active clients
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </div>
         </div>
-        
-        <div class="form-group">
-            <label for="service">Interested In *</label>
-            <select id="service" name="Service Interested In" required>
-                <option value="">Select a service</option>
-                <option value="Social Media Marketing">Social Media Marketing</option>
-                <option value="SEO Services">SEO Services</option>
-                <option value="PPC Advertising">PPC Advertising</option>
-                <option value="Content Marketing">Content Marketing</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Branding">Branding</option>
-                <option value="AI Receptionist">AI Receptionist</option>
-                <option value="Mobile App Development">Mobile App Development</option>
-                <option value="CRM Software">CRM Software</option>
-                <option value="Not Sure / Multiple Services">Not Sure / Multiple Services</option>
-            </select>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <p>Toronto, Ontario, Canada</p>
+                <span>Map will be embedded here</span>
+            </div>
         </div>
-    </div>
-    
-    <div class="form-group">
-        <label for="company">Company Name</label>
-        <input 
-            type="text" 
-            id="company" 
-            name="Company" 
-            placeholder="Your Company Ltd."
-        >
-    </div>
-    
-    <div class="form-group">
-        <label for="message">Tell Us About Your Project *</label>
-        <textarea 
-            id="message" 
-            name="Message" 
-            rows="6" 
-            placeholder="What are your goals? What challenges are you facing? The more details, the better we can help!"
-            required
-        ></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label for="budget">Monthly Marketing Budget</label>
-        <select id="budget" name="Budget">
-            <option value="">Select your budget range</option>
-            <option value="Under $1,000/month">Under $1,000/month</option>
-            <option value="$1,000 - $3,000/month">$1,000 - $3,000/month</option>
-            <option value="$3,000 - $5,000/month">$3,000 - $5,000/month</option>
-            <option value="$5,000 - $10,000/month">$5,000 - $10,000/month</option>
-            <option value="$10,000+/month">$10,000+/month</option>
-            <option value="Not sure yet">Not sure yet</option>
-        </select>
-    </div>
-    
-    <button type="submit" class="btn btn-primary btn-large">
-        Send Message
-        <i class="fas fa-paper-plane"></i>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Common Questions</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly will I see results?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            It depends on the service. PPC ads can drive traffic within days. SEO typically 
+                            takes 3-6 months for significant results. Social media growth happens gradually 
+                            over 2-4 months. We'll set realistic expectations during your strategy session.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's your pricing structure?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            We create custom packages based on your goals and budget. Monthly retainers 
+                            typically start at $1,500/month for basic services and scale based on scope. 
+                            We'll provide a detailed proposal after our initial consultation.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with businesses in my industry?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            We've worked with 15+ industries including e-commerce, SaaS, local services, 
+                            healthcare, real estate, and more. Every industry has unique challenges, and 
+                            we customize our approach accordingly.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if I'm not happy with the results?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            We offer monthly agreements (no long-term lock-in). If you're not seeing progress, 
+                            we'll adjust our strategy. If you're still not satisfied, you can cancel anytime 
+                            with 30 days notice. Your success is our only metric.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will I have a dedicated account manager?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Yes! You'll have a dedicated strategist who knows your business inside-out. 
+                            Plus, you'll have direct access to our team via Slack, email, or phone. 
+                            No ticket systems or waiting days for responses.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you guarantee results?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            No one can guarantee specific rankings or results (and run from anyone who does). 
+                            What we CAN guarantee: transparent reporting, constant optimization, and strategies 
+                            based on proven data. Our 98% retention rate speaks for itself.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <h3 class="footer-logo">ZENOVA<span>.</span></h3>
+                    <p class="footer-desc">
+                        Digital marketing that actually works. 
+                        Based in Toronto, serving businesses worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#social-media">Social Media Marketing</a></li>
+                        <li><a href="services.html#seo">SEO Services</a></li>
+                        <li><a href="services.html#ppc">PPC Advertising</a></li>
+                        <li><a href="services.html#web-dev">Web Development</a></li>
+                        <li><a href="services.html#ai-receptionist">AI Receptionist</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hassanumer806@gmail.com">hassanumer806@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Toronto, Canada</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zenova. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/contact-form.js"></script>
     
-    <p class="form-note">
-        * Required fields. We respect your privacy and will never share your information.
-    </p>
-</form>
+</body>
+</html>

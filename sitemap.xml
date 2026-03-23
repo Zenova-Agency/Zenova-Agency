@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zenova-agency.netlify.app/</loc>
+    <loc>https://zenova-agency.pages.dev/</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zenova-agency.netlify.app/about.html</loc>
+    <loc>https://zenova-agency.pages.dev/about.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zenova-agency.netlify.app/services.html</loc>
+    <loc>https://zenova-agency.pages.dev/services.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zenova-agency.netlify.app/contact.html</loc>
+    <loc>https://zenova-agency.pages.dev/contact.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zenova-agency.netlify.app/portfolio.html</loc>
+    <loc>https://zenova-agency.pages.dev/portfolio.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zenova-agency.netlify.app/blog.html</loc>
+    <loc>https://zenova-agency.pages.dev/blog.html</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

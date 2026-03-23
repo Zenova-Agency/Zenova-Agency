@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zenova-agency.netlify.app/sitemap.xml
+Sitemap: https://zenova-agency.pages.dev/sitemap.xml

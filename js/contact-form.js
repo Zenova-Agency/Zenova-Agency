@@ -1,5 +1,5 @@
 /* ========================================
-   Contact Form - Simple Version
+   Contact Form - FormSubmit Integration
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const success = urlParams.get('success');
     
-    const contactForm = document.getElementById('contact-form');
+    const contactForm = document.querySelector('.contact-form'); // Updated selector
     const successMessage = document.getElementById('form-success');
     
     if (success === 'true' && successMessage && contactForm) {
@@ -22,6 +22,31 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Clean URL (remove ?success=true)
         window.history.replaceState({}, document.title, window.location.pathname);
+    }
+    
+    // ========================================
+    // FORM SUBMISSION TRACKING (OPTIONAL)
+    // ========================================
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Don't prevent default - let FormSubmit handle submission
+            // Just track for analytics
+            console.log('📧 Contact form submitted');
+            
+            // Google Analytics tracking (if GA is installed)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submission', {
+                    'event_category': 'Contact',
+                    'event_label': 'Contact Form'
+                });
+            }
+            
+            // Facebook Pixel tracking (if installed)
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact');
+            }
+        });
     }
     
     // ========================================

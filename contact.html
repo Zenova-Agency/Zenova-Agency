@@ -92,13 +92,16 @@
                     <h2>Send Us a Message</h2>
                     <p class="form-intro">Fill out the form below and we'll get back to you within 24 hours.</p>
                     
-                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact.html?success=true" class="contact-form">
+                                       <form action="https://formsubmit.co/Hassanumer806@gmail.com" method="POST" class="contact-form">
                         
-                        <!-- Netlify form setup -->
-                        <input type="hidden" name="form-name" value="contact">
-                        <p style="display:none;">
-                            <label>Don't fill this out: <input name="bot-field"></label>
-                        </p>
+                        <!-- FormSubmit Configuration (Hidden) -->
+                        <input type="hidden" name="_subject" value="🚀 New Contact from Zenova Website!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://zenova-agency.pages.dev/contact.html?success=true">
+                        
+                        <!-- Honeypot spam protection -->
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         
                         <div class="form-row">
                             <div class="form-group">

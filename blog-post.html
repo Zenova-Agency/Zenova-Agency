@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Zenova</title>
+    <meta name="description" content="Read our latest insights on digital marketing, SEO, and business growth.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231F8FB3'/><stop offset='100%25' style='stop-color:%232EC7FF'/></linearGradient><filter id='glow'><feGaussianBlur stdDeviation='2' result='blur'/><feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge></filter></defs><rect width='100' height='100' fill='%230B0F14'/><text x='50' y='54' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='72' font-weight='800' fill='url(%23g)' filter='url(%23glow)'>Z</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* Premium Blog Post Design */
+        .dynamic-header {
+            position: relative;
+            padding: 180px 0 80px;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1724 100%);
+            overflow: hidden;
+        }
+        .dynamic-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(31,143,179,0.15) 0%, rgba(11,15,20,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .dynamic-header .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: 0.3s;
+            padding: 10px 20px;
+            border: 1px solid rgba(46, 199, 255, 0.2);
+            border-radius: 30px;
+            background: rgba(46, 199, 255, 0.05);
+        }
+        .back-link:hover {
+            background: rgba(46, 199, 255, 0.15);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .dynamic-header h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            color: var(--white);
+            margin-bottom: 25px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .post-meta-big {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .post-meta-big span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .post-meta-big i {
+            color: var(--primary-color);
+        }
+        .dynamic-content {
+            padding: 80px 0 120px;
+            background: var(--dark-bg);
+        }
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #a0aec0;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+        .content-wrapper p {
+            margin-bottom: 25px;
+        }
+        .content-wrapper h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin: 50px 0 25px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .content-wrapper blockquote {
+            position: relative;
+            padding: 40px;
+            margin: 50px 0;
+            background: rgba(46, 199, 255, 0.03);
+            border-radius: 0 16px 16px 0;
+            border-left: 4px solid var(--primary-color);
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--white);
+            line-height: 1.6;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .content-wrapper ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        .content-wrapper li {
+            margin-bottom: 15px;
+        }
+        .content-wrapper strong {
+            color: var(--primary-color);
+        }
+        .header-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background: rgba(46, 199, 255, 0.1);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(46, 199, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">ZENOVA</span><span class="logo-dot">.</span>
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="contact.html" class="btn-nav">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="dynamic-loader" style="min-height: 80vh;">
+        <!-- Header -->
+        <section class="dynamic-header">
+            <div class="container">
+                <a href="blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+                <div class="header-icon" id="d-icon"><i class="fas fa-spinner fa-spin"></i></div>
+                <h1 id="d-title">Loading...</h1>
+                <div class="post-meta-big" id="d-meta">
+                    <!-- Meta loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="dynamic-content">
+            <div class="container">
+                <div class="content-wrapper" id="d-content">
+                    <!-- Content loaded via JS -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-logo">ZENOVA<span>.</span></h3>
+                    <p class="footer-desc">Digital marketing that actually works. Based in Toronto, serving businesses worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/zenovacoofficial/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/zenovacoofficials/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/zenova_agency" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/zenova-agency/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i><a href="mailto:info@zenovaco.tech">info@zenovaco.tech</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Toronto, Canada</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/content-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            const data = contentData.blogs[id];
+
+            if(data) {
+                document.title = data.title + " | Zenova Blog";
+                document.getElementById('d-title').textContent = data.title;
+                document.getElementById('d-icon').innerHTML = `<i class="${data.imageIcon}"></i>`;
+                document.getElementById('d-meta').innerHTML = `
+                    <span><i class="fas fa-tag"></i> ${data.category}</span>
+                    <span><i class="far fa-calendar"></i> ${data.date}</span>
+                    <span><i class="far fa-clock"></i> ${data.readTime}</span>
+                `;
+                document.getElementById('d-content').innerHTML = data.content;
+            } else {
+                document.getElementById('d-title').textContent = "Post Not Found";
+                document.getElementById('d-icon').innerHTML = `<i class="fas fa-exclamation-triangle"></i>`;
+                document.getElementById('d-content').innerHTML = "<p>The requested blog post could not be found. Please go back to the blog and try another post.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

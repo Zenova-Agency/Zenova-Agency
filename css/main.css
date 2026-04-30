@@ -478,14 +478,14 @@ ul {
    ======================================== */
 
 .services-preview {
-    padding: 120px 0;
+    padding: 60px 0;
     background: var(--gradient-dark);
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    gap: 60px 30px;
 }
 
 .service-card {
@@ -549,7 +549,7 @@ ul {
    ======================================== */
 
 .why-us {
-    padding: 120px 0;
+    padding: 60px 0;
 }
 
 .why-us-content {
@@ -871,6 +871,7 @@ ul {
     grid-template-columns: 2fr 1fr;
     gap: 50px;
     margin-bottom: 40px;
+    align-items: center;
 }
 
 .service-intro {
@@ -959,6 +960,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .service-visual-placeholder {

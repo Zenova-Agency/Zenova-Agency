@@ -74,42 +74,38 @@ window.addEventListener('load', function() {
     // ========================================
     
     const stats = document.querySelectorAll('.stat-number');
-    let statsAnimated = false;
-    
-    function animateStats() {
-        stats.forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-target'));
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // 60fps
-            let current = 0;
-            
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    stat.textContent = Math.floor(current);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    stat.textContent = target;
-                }
-            };
-            
-            updateCounter();
-        });
+
+    function animateSingleStat(stat) {
+        const target = parseInt(stat.getAttribute('data-target'));
+        if (!target || stat.dataset.animated) return;
+        stat.dataset.animated = 'true';
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                stat.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        updateCounter();
     }
-    
-    // Trigger stats animation when scrolled into view
-    const statsSection = document.querySelector('.hero-stats');
-    if (statsSection) {
-        const observer = new IntersectionObserver((entries) => {
+
+    // Observe every .stat-number individually — works on any page
+    if (stats.length > 0) {
+        const statObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    animateStats();
-                    statsAnimated = true;
+                if (entry.isIntersecting) {
+                    animateSingleStat(entry.target);
+                    statObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
-        
-        observer.observe(statsSection);
+        }, { threshold: 0.3 });
+
+        stats.forEach(stat => statObserver.observe(stat));
     }
 
     // ========================================

@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 start: 'top 80%',
                 toggleActions: 'play none none reverse'
             },
-            opacity: 0,
+            // opacity: 0,
             y: 50,
             duration: 0.8,
             ease: 'power2.out'
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 start: 'top 75%',
                 toggleActions: 'play none none reverse'
             },
-            opacity: 0,
+            // opacity: 0,
             y: 80,
             duration: 0.8,
             stagger: 0.1,
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 start: 'top 70%',
                 toggleActions: 'play none none reverse'
             },
-            opacity: 0,
+            // opacity: 0,
             x: -100,
             duration: 1,
             ease: 'power3.out'
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 start: 'top 70%',
                 toggleActions: 'play none none reverse'
             },
-            opacity: 0,
+            // opacity: 0,
             x: 100,
             duration: 1,
             ease: 'power3.out'
